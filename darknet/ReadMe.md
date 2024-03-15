@@ -1,5 +1,5 @@
 #### darknet边缘算力平台部署
-数据标注软件：精灵标注工具
+数据标注软件：精灵标注工具  
 边缘算力平台测试
 - [x] Jetson NX
 - [x] Jetson Agx xaiver
