@@ -10,15 +10,14 @@ int main(int argc, char **argv)
 {
     if (argc < 6)
     {
-        std::cerr << "User : " << argv[0] << "<main path> <image/video> <cfg> <weights> <classes> <mode>" << std::endl;
+        std::cerr << "User : " << argv[0] << "<image/video> <cfg> <weights> <classes> <mode>" << std::endl;
         return -1;
-    }
-    chdir(argv[1]);                                                  // 主目录
-    std::string model_cfg = std::string("../config/") + argv[3];     // 模型
-    std::string model_weights = std::string("../config/") + argv[4]; // 权重
-    std::string class_file = std::string("../config") + argv[5];     // 类别
-    std::string image_path = std::string("../") + argv[2];           // 图像或视频
-    int mode = std::stoi(argv[6]);                                   // 图像视频标志
+    }                                                 
+    std::string model_cfg = argv[2];     // 模型
+    std::string model_weights = argv[3]; // 权重
+    std::string class_file = argv[4];    // 类别
+    std::string image_path =  argv[1];   // 图像或视频
+    int mode = std::stoi(argv[5]);       // 图像视频标志
 
     YoLoDetctor *det = new YoLoDetctor(model_cfg, model_weights, class_file, 0, 0.5);
     cv::Mat frame;
