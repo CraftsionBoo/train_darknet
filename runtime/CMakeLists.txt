@@ -1,1 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+project(detector LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 14)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+set(darknet_include ${PROJECT_SOURCE_DIR}/../darknet/include)
+set(darknet_lib ${PROJECT_SOURCE_DIR}/darknet)
+
+find_package(OpenCV 3.2.0 REQUIRED)
+if (OpenCV_FOUND)
+    include_directories(${OpenCV_INCLUDE_DIRS})
+    message(STATUS "Found OpenCV ${OpenCV_VERSION} in ${OpenCV_ROOT_DIR}")
+    # message(STATUS "OpenCV libraries: ${OpenCV_LIBRARIES}")
+    # message(STATUS "OpenCV include files: ${OpenCV_INCLUDE_DIRS}")
+else()
+    message(FATAL_ERROR "Cannot find OpenCV")
+endif()
+
+include_directories(${darknet_include})
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/src/main.cpp)
+target_link_libraries(${PROJECT_NAME} ${darknet_lib}/libdarknet.so ${OpenCV_LIBS})
