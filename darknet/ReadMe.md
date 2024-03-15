@@ -1,5 +1,6 @@
 #### darknet边缘算力平台部署
-数据标注选择精灵标注工具进行标注，在以下边缘算力平台测试
+数据标注软件：精灵标注工具
+边缘算力平台测试
 - [x] Jetson NX
 - [x] Jetson Agx xaiver
 #### 环境
@@ -99,7 +100,7 @@ OPENMP=0
 LIBSO=1   # 动态库，后续进行推理使用
 ZED_CAMERA=0
 ZED_CAMERA_v2_8=0
-# 根据nvidia修改
+# 根据显卡修改
 ARCH= -gencode arch=compute_86,code=[sm_86,compute_86]
 # opencv版本修改
 LDFLAGS+= `pkg-config --libs opencv3 2> /dev/null || pkg-config --libs opencv`
