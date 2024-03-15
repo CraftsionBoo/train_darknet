@@ -1,7 +1,7 @@
 # Darknet
 To train darknet and Inference using the darknet model
 
-### USE
+#### USE
 1. 构建darknet框架训练格式
 ```bash
 cd utils
@@ -12,5 +12,7 @@ python export.py --data_path ../datasets/custom_data --cfg yolov3.cfg --weights 
 ```
 2. 输入训练命令
 ```bash
-# 找到日志输出 train_cmd 复制到终端即可
+# 日志输出train_cmd复制
+cd .. && cd darknet
+./darknet detector train ../logs/train.data ../assets/yolov3.cfg ../assets/darknet53.conv.74 -dont_show
 ```
