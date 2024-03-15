@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # download pretrained weights
 # yolov3
