@@ -21,5 +21,6 @@ cd ..
 cd ..
 cmake -S . -B build
 cmake --build build
-./bin/detector
+./bin/detector <image_path> ./assets/yolov3.cfg ./logs/yolov3_best.weights ./logs/train.names 0
+./bin/detector <video_path> ./assets/yolov3.cfg ./logs/yolov3_best.weights ./logs/train.names 1
 ```
