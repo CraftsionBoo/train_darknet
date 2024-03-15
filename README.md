@@ -13,6 +13,13 @@ python export.py --data_path ../datasets/custom_data --cfg yolov3.cfg --weights 
 2. 输入训练命令
 ```bash
 # 日志输出train_cmd复制
-cd .. && cd darknet
-./darknet detector train ../logs/train.data ../assets/yolov3.cfg ../assets/darknet53.conv.74 -dont_show
+cd .. 
+.darknet/darknet detector train ../logs/train.data ../assets/yolov3.cfg ../assets/darknet53.conv.74 -dont_show
+```
+3. 推理
+```bash
+cd ..
+cmake -S . -B build
+cmake --build build
+./bin/detector
 ```
