@@ -1,5 +1,5 @@
 # Darknet
-To train darknet and Inference using the darknet model
+训练darknet模型并且进行推理
 
 #### USE
 1. 构建darknet框架训练格式
